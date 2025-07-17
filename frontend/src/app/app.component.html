@@ -1,0 +1,16 @@
+<h2>Company Registration</h2>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <label>Company Name:</label>
+  <input formControlName="companyName"><br>
+
+  <label>Company Registration Number:</label>
+  <input formControlName="companyRegistrationNumber"><br><br>
+
+  <app-address (addressesChanged)="updateAddresses($event)"></app-address>
+  <app-hr-details (hrDetailsChanged)="updateHrDetails($event)"></app-hr-details>
+
+  <button type="submit">Register</button>
+</form>
+
+<h1>changes</h1>

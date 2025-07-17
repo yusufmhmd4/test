@@ -1,0 +1,28 @@
+<h3>Addresses</h3>
+
+<form [formGroup]="addressForm">
+  <input placeholder="Type" formControlName="type">
+  <input placeholder="House No" formControlName="houseNo">
+  <input placeholder="Location" formControlName="location">
+  <input placeholder="State" formControlName="state">
+  <input placeholder="Street" formControlName="street">
+  <input placeholder="City" formControlName="city">
+  <input placeholder="Zipcode" formControlName="zipcode">
+  <button type="button" (click)="addAddress()">Add Address</button>
+</form>
+
+<table border="1">
+  <tr>
+    <th>Type</th><th>House</th><th>Location</th><th>State</th><th>Street</th><th>City</th><th>Zipcode</th><th>Action</th>
+  </tr>
+  <tr *ngFor="let addr of addressList; let i = index">
+    <td>{{ addr.type }}</td>
+    <td>{{ addr.houseNo }}</td>
+    <td>{{ addr.location }}</td>
+    <td>{{ addr.state }}</td>
+    <td>{{ addr.street }}</td>
+    <td>{{ addr.city }}</td>
+    <td>{{ addr.zipcode }}</td>
+    <td><button (click)="removeAddress(i)">Delete</button></td>
+  </tr>
+</table>

@@ -1,0 +1,22 @@
+<h3>HR Details</h3>
+
+<form [formGroup]="hrForm">
+  <input placeholder="First Name" formControlName="firstName">
+  <input placeholder="Middle Name" formControlName="middleName">
+  <input placeholder="Last Name" formControlName="lastName">
+  <select formControlName="gender">
+    <option value="">Select Gender</option>
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+    <option value="Other">Other</option>
+  </select>
+
+  <div formArrayName="emails">
+    <div *ngFor="let email of emails.controls; let i = index">
+      <input [formControlName]="i" placeholder="Email">
+      <button type="button" (click)="removeEmail(i)">Remove</button>
+    </div>
+  </div>
+
+  <button type="button" (click)="addEmail()">Add Email</button>
+</form>
