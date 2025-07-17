@@ -1,0 +1,32 @@
+POST http://localhost:3000/api/register
+Content-Type: application/json
+
+{
+  "companyName": "TechNova Pvt Ltd",
+  "companyRegistrationNumber": "TN-REG-2025-0034",
+  "addresses": [
+    {
+      
+      "zipcode": "500081"
+    },  
+    {
+      "type": "Branch Office",
+      "houseNo": "202",
+      "location": "Kondapur",
+      "state": "Telangana",
+      "street": "2nd Cross",
+      "city": "Hyderabad",
+      "zipcode": "500084"
+    }
+  ],
+  "hrDetails": {
+    "firstName": "Ravi",
+    "middleName": "K",
+    "lastName": "Sharma",
+    "gender": "Male",
+    "emails": [
+      "ravi.sharma@technova.com",
+      "hr@technova.com"
+    ]
+  }
+}
